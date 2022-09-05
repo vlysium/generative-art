@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#artworks {
+  display: grid;
+  grid: auto / 1fr 1fr 1fr;
+}
+
+.artwork {
+  display: grid;
+  place-items: center;
+  height: 300px;
+}
+
+.box,
+.circle {
+  grid-area: 1/1;
+  border: 2px solid black;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.circle {
+  border-radius: 100%;
+}
+
+.box.circle {
+  border-radius: 0;
+}
+
+.box.circle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 2px solid black;
+}
+
+#artwork6 .circle {
+  height: 75px;
+  width: 75px;
+  transform-origin: bottom right;
+}
